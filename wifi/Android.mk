@@ -1,4 +1,6 @@
 # Copyright 2006 The Android Open Source Project
+$(shell mkdir -p $(OUT)/obj/SHARED_LIBRARIES/libqminvapi_intermediates)
+$(shell touch $(OUT)/obj/SHARED_LIBRARIES/libqminvapi_intermediates/export_includes)
 
 ifdef WIFI_DRIVER_MODULE_PATH
 LOCAL_CFLAGS += -DWIFI_DRIVER_MODULE_PATH=\"$(WIFI_DRIVER_MODULE_PATH)\"
@@ -46,4 +48,4 @@ ifeq ($(BOARD_HAVE_SAMSUNG_WIFI),true)
 LOCAL_CFLAGS += -DSAMSUNG_WIFI
 endif
 
-LOCAL_SHARED_LIBRARIES += libnetutils
+LOCAL_SHARED_LIBRARIES += libnetutils libqminvapi
